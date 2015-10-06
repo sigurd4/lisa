@@ -92,6 +92,7 @@ class LCDScreen
 
 LCDScreen lcd;
 int timer;
+long ticksRunning;
 boolean enabled;
 
 void setup()
@@ -103,11 +104,15 @@ void setup()
 
 void loop()
 {
-  if (enabled)
+  if (ticksRunning % 20) //still not sure how much one second is
   {
-    updateTimer();
+    if (enabled)
+    {
+      updateTimer();
+    }
   }
-  delay(20); //still not sure how much one second is
+  ++ticksRunning;
+  delay(1);
 }
 
 void updateTimer()
@@ -121,3 +126,4 @@ void updateTimer()
     timer = 0;
   }
 }
+
