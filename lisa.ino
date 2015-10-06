@@ -1,5 +1,3 @@
-
-
 class Port
 {
   public:
@@ -104,7 +102,7 @@ void setup()
 
 void loop()
 {
-  if (ticksRunning % 1000) //1000 milliseconds = 1 second
+  if (everyXTicks(1000)) //1000 milliseconds = 1 second
   {
     if (enabled)
     {
@@ -125,5 +123,10 @@ void updateTimer()
   {
     timer = 0;
   }
+}
+
+boolean everyXTicks(int x)
+{
+  return ticksRunning % x == x % x;
 }
 
