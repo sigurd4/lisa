@@ -80,7 +80,7 @@ class LCDScreen
 
     LCDScreen()
     {
-      this.enabled = true;
+      enabled = true;
       for (int i = 0; i < ports::lenght; ++i)
       {
         ports[i] = new PortOutput(i, false);
