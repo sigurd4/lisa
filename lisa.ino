@@ -6,6 +6,7 @@ class Port
     Port(int newid)
     {
       id = newid;
+      init();
     }
 
     virtual void init() = 0;
