@@ -80,14 +80,16 @@ class PortOutput : public Port
 class LCDScreen
 {
   private:
-    PortOutput ports [14];
+    const static int portsLenght = 14;
+    PortOutput ports [portsLenght];
   public:
     boolean enabledLCD;
 
     LCDScreen()
     {
       enabledLCD = true;
-      for (int i = 0; i < ports::lenght; ++i)
+      int i;
+      for (i = 0; i < portsLenght; ++i)
       {
         ports[i] = new PortOutput(i, false);
       }
