@@ -20,7 +20,7 @@ class PortInput : public Port
   public:
     PortInput(int id) : Port(id)
     {
-      
+
     }
 
     void getVal()
@@ -103,7 +103,10 @@ void setup()
 
 void loop()
 {
-  updateTimer();
+  if (enabled)
+  {
+    updateTimer();
+  }
   delay(20); //still not sure how much one second is
 }
 
