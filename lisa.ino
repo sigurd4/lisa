@@ -91,7 +91,7 @@ class LCDScreen
       int i;
       for (i = 0; i < portsLenght; ++i)
       {
-        ports[i] = new PortOutput(i, false);
+        ports[i] = PortOutput(i, false);
       }
     }
 };
@@ -106,7 +106,7 @@ boolean enabled;
 
 void setup()
 {
-  lcd = new LCDScreen();
+  lcd = LCDScreen();
   enabled = true;
   timeTotal = 60; //this will change later
   resetTimer();
