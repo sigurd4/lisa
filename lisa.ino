@@ -104,7 +104,7 @@ void setup()
 
 void loop()
 {
-  if (ticksRunning % 20) //still not sure how much one second is
+  if (ticksRunning % 1000) //1000 milliseconds = 1 second
   {
     if (enabled)
     {
