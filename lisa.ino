@@ -6,7 +6,11 @@ class Port
     Port(int newid)
     {
       id = newid;
-      init();
+    }
+
+    Port()
+    {
+
     }
 
     virtual void init() = 0;
@@ -21,6 +25,11 @@ class PortInput : public Port
 {
   public:
     PortInput(int id) : Port(id)
+    {
+
+    }
+
+    PortInput(): Port()
     {
 
     }
@@ -45,6 +54,11 @@ class PortOutput : public Port
     {
       defaultValue = newDefault;
       setDefault();
+    }
+
+    PortOutput(): Port()
+    {
+
     }
 
     void setDefault()
