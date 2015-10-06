@@ -90,6 +90,7 @@ class LCDScreen
 
 LCDScreen lcd;
 int timer;
+int timeTotal;
 long ticksRunning;
 boolean enabled;
 
@@ -97,7 +98,8 @@ void setup()
 {
   lcd = new LCDScreen();
   enabled = true;
-  timer = 60; //this will change later
+  timeTotal = 60; //this will change later
+  resetTimer();
 }
 
 void loop()
@@ -130,3 +132,7 @@ boolean everyXTicks(int x)
   return ticksRunning % x == x % x;
 }
 
+void resetTimer()
+{
+  timer = timeTotal;
+}
