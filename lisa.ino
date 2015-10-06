@@ -92,6 +92,7 @@ class LCDScreen
       for (i = 0; i < portsLenght; ++i)
       {
         ports[i] = PortOutput(i, false);
+        ports[i].init();
       }
     }
 };
