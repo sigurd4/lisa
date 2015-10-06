@@ -78,7 +78,7 @@ class LCDScreen
   public:
     boolean enabled;
 
-    LCSScreen()
+    LCDScreen()
     {
       this.enabled = true;
       for (int i = 0; i < ports::lenght; ++i)
