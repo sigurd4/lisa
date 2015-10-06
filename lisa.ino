@@ -76,11 +76,11 @@ class LCDScreen
   private:
     PortOutput ports [14];
   public:
-    boolean enabled;
+    boolean enabledLCD;
 
     LCDScreen()
     {
-      enabled = true;
+      enabledLCD = true;
       for (int i = 0; i < ports::lenght; ++i)
       {
         ports[i] = new PortOutput(i, false);
