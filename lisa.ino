@@ -11,7 +11,10 @@ class Port
 
     virtual void init() = 0;
 
-    virtual boolean valueCheck(boolean value) = 0;
+    boolean valueCheck(boolean value)
+    {
+      return value;
+    }
 };
 
 class PortInput : public Port
@@ -30,11 +33,6 @@ class PortInput : public Port
     void init()
     {
       pinMode(id, INPUT);
-    }
-
-    boolean valueCheck(boolean value)
-    {
-      return value;
     }
 };
 
@@ -62,11 +60,6 @@ class PortOutput : public Port
     void init()
     {
       pinMode(id, OUTPUT);
-    }
-
-    boolean valueCheck(boolean value)
-    {
-      return value;
     }
 };
 
