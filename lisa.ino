@@ -13,7 +13,10 @@ class Port
 
     }
 
-    virtual void init() = 0;
+    void init()
+    {
+      
+    }
 
     boolean valueCheck(boolean value)
     {
