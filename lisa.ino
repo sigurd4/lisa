@@ -21,6 +21,15 @@ class Port
     }
 };
 
+int nextPortToBeInitialized = 0;
+Port portsToBeInitialized [];
+
+Port registerPort(Port port)
+{
+  portsToBeInitialized[nextPortToBeInitialized] = port;
+  ++nextPortToBeInitialized;
+}
+
 class PortInput : public Port
 {
   public:
@@ -91,8 +100,7 @@ class LCDScreen
       int i;
       for (i = 0; i < portsLenght; ++i)
       {
-        ports[i] = PortOutput(i, false);
-        ports[i].init();
+        ports[i] = registerPort(PortOutput(i, false));
       }
     }
 };
@@ -108,6 +116,8 @@ boolean enabled;
 void setup()
 {
   lcd = LCDScreen();
+  initPorts()
+
   enabled = true;
   timeTotal = 60; //this will change later
   resetTimer();
@@ -124,6 +134,15 @@ void loop()
   }
   ++ticksRunning;
   delay(1);
+}
+
+void initPorts()
+{
+  int i;
+  for (i = 0; i < nextPortToBeInitialized; ++i)
+  {
+    portsToBeInitialized[i].init();
+  }
 }
 
 void updateTimer()
