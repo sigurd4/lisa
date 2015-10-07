@@ -10,7 +10,7 @@ class LCDScreen
 
     LCDScreen()
     {
-      enabledLCD = true;
+      this->enabled = true;
       int i;
       for (i = 0; i < portsLenght; ++i)
       {
