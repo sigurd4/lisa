@@ -25,7 +25,7 @@ class Port
 };
 
 int nextPortToBeInitialized = 0;
-Port portsToBeInitialized [];
+Port portsToBeInitialized [255];
 
 Port registerPort(Port port)
 {
