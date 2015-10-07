@@ -3,14 +3,14 @@ class Port
   public:
     int id;
 
-    Port(int newid)
-    {
-      id = newid;
-    }
-
     Port()
     {
 
+    }
+
+    Port(int newid)
+    {
+      id = newid;
     }
 
     void init()
@@ -36,12 +36,12 @@ Port registerPort(Port port)
 class PortInput : public Port
 {
   public:
-    PortInput(int id) : Port(id)
+    PortInput(): Port()
     {
 
     }
-
-    PortInput(): Port()
+    
+    PortInput(int id) : Port(id)
     {
 
     }
@@ -62,15 +62,15 @@ class PortOutput : public Port
   public:
     boolean defaultValue;
 
+    PortOutput(): Port()
+    {
+
+    }
+
     PortOutput(int id, boolean newDefault) : Port(id)
     {
       defaultValue = newDefault;
       setDefault();
-    }
-
-    PortOutput(): Port()
-    {
-
     }
 
     void setDefault()
