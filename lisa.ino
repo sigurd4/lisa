@@ -119,7 +119,7 @@ boolean enabled;
 void setup()
 {
   lcd = LCDScreen();
-  initPorts()
+  initPorts();
 
   enabled = true;
   timeTotal = 60; //this will change later
