@@ -14,7 +14,7 @@ class LCDScreen
       int i;
       for (i = 0; i < portsLenght; ++i)
       {
-        ports[i] = dynamic_cast<PortOutput>(registerPort(PortOutput(i, false)));
+        ports[i] = PortOutput(i, false);
       }
     }
 };

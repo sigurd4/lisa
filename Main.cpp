@@ -20,7 +20,7 @@ class Main
 
     void init()
     {
-      lcd = LCDScreen();
+      lcd = initLCD();
       initPorts();
 
       enabled = true;
@@ -41,7 +41,7 @@ class Main
       delay(1);
     }
 
-    Port registerPort(Port port)
+    void registerPort(Port port)
     {
       portsToBeInitialized[nextPortToBeInitialized] = port;
       ++nextPortToBeInitialized;
@@ -76,5 +76,16 @@ class Main
     void resetTimer()
     {
       timer = timeTotal;
+    }
+
+    LCDScreen initLCD()
+    {
+      lcd = LCDScreen();
+      int i;
+      for (i = 0; i < lcd.portsLenght; ++i)
+      {
+        registerPort(lcd.ports[i]);
+      }
+      return lcd;
     }
 }
