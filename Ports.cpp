@@ -37,9 +37,9 @@ class PortInput : public Port
 
     }
 
-    void getVal()
+    bool getVal()
     {
-      valueCheck(digitalRead(id));
+      return valueCheck(digitalRead(id));
     }
 
     void init()
