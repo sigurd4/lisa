@@ -6,7 +6,7 @@ Main main;
 
 void setup()
 {
-  main = Main::Main();
+  main = Main();
   main.init();
 }
 
