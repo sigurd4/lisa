@@ -18,7 +18,7 @@ class Port
 
     }
 
-    boolean valueCheck(boolean value)
+    boolean valueCheck(bool value)
     {
       return value;
     }
@@ -51,14 +51,14 @@ class PortInput : public Port
 class PortOutput : public Port
 {
   public:
-    boolean defaultValue;
+    bool defaultValue;
 
     PortOutput(): Port()
     {
 
     }
 
-    PortOutput(int id, boolean newDefault) : Port(id)
+    PortOutput(int id, bool newDefault) : Port(id)
     {
       defaultValue = newDefault;
       setDefault();
@@ -69,7 +69,7 @@ class PortOutput : public Port
       digitalWrite(id, valueCheck(defaultValue));
     }
 
-    void setVal(boolean value)
+    void setVal(bool value)
     {
       digitalWrite(id, valueCheck(value));
     }

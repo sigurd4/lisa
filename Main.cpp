@@ -8,7 +8,7 @@ class Main
     int timer;
     int timeTotal;
     long ticksRunning;
-    boolean enabled;
+    bool enabled;
 
     int nextPortToBeInitialized = 0;
     Port portsToBeInitialized [255];
@@ -68,7 +68,7 @@ class Main
       }
     }
 
-    boolean everyXTicks(int x)
+    bool everyXTicks(int x)
     {
       return ticksRunning % x == x % x;
     }

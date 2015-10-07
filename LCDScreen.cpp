@@ -6,7 +6,7 @@ class LCDScreen
     const static int portsLenght = 14;
     PortOutput ports [portsLenght];
   public:
-    boolean enabledLCD;
+    bool enabled;
 
     LCDScreen()
     {
