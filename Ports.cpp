@@ -18,7 +18,7 @@ class Port
       
     }
 
-    boolean valueCheck(bool value)
+    bool valueCheck(bool value)
     {
       return value;
     }
