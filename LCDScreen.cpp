@@ -1,3 +1,5 @@
+#include "arduino.h"
+
 #include "Ports.cpp"
 
 class LCDScreen

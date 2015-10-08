@@ -1,3 +1,5 @@
+#include "arduino.h"
+
 class Port
 {
   public:
