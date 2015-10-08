@@ -2,12 +2,15 @@
 
 class LCDScreen
 {
-  private:
+
+  public:
     const static int portsLenght = 14;
     PortOutput ports [portsLenght];
-  public:
-    bool enabled;
+  private:
 
+
+    bool enabled;
+  public:
     LCDScreen()
     {
       this->enabled = true;
