@@ -10,12 +10,13 @@ class Main
     long ticksRunning;
     bool enabled;
 
-    int nextPortToBeInitialized = 0;
+    int nextPortToBeInitialized;
+
     Port portsToBeInitialized [255];
 
     Main()
     {
-      main = this;
+      nextPortToBeInitialized = 0;
     }
 
     void init()
