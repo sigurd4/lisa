@@ -15,7 +15,7 @@ class Port
 
     void init()
     {
-
+      
     }
 
     boolean valueCheck(bool value)
@@ -61,7 +61,6 @@ class PortOutput : public Port
     PortOutput(int id, bool newDefault) : Port(id)
     {
       defaultValue = newDefault;
-      setDefault();
     }
 
     void setDefault()
@@ -77,5 +76,6 @@ class PortOutput : public Port
     void init()
     {
       pinMode(id, OUTPUT);
+      setDefault();
     }
 };
