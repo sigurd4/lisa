@@ -17,7 +17,8 @@ class LCDScreen
       int i;
       for (i = 0; i < portsLenght; ++i)
       {
-        ports[i] = PortOutput(i, false);
+
+        this->ports[i] =   PortOutput(i, false);
       }
     }
 };
