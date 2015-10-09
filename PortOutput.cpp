@@ -1,54 +1,6 @@
 #include "arduino.h"
 
-class Port
-{
-  public:
-    int id;
-
-    Port()
-    {
-
-    }
-
-    Port(int newid)
-    {
-      id = newid;
-    }
-
-    void init()
-    {
-      
-    }
-
-    bool valueCheck(bool value)
-    {
-      return value;
-    }
-};
-
-class PortInput : public Port
-{
-  public:
-    PortInput(): Port()
-    {
-
-    }
-
-    PortInput(int id) : Port(id)
-    {
-
-    }
-
-    bool getVal()
-    {
-      return valueCheck(digitalRead(id));
-    }
-
-    void init()
-    {
-      pinMode(id, INPUT);
-    }
-};
+#include "Port.cpp"
 
 class PortOutput : public Port
 {
