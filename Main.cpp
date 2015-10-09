@@ -45,7 +45,7 @@ class Main
 
     void registerPort(Port port)
     {
-      this->portsToBeInitialized[this->nextPortToBeInitialized] = this->port;
+      this->portsToBeInitialized[this->nextPortToBeInitialized] = port;
       ++this->nextPortToBeInitialized;
     }
 
@@ -86,7 +86,7 @@ class Main
       int i;
       for (i = 0; i < this->lcd.portsLenght; ++i)
       {
-        this->registerPort(lcd.ports[i]);
+        this->registerPort(this->lcd.ports[i]);
       }
       return lcd;
     }
