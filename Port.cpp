@@ -12,7 +12,7 @@ class Port
 
     Port(int newid)
     {
-      id = newid;
+      this->id = newid;
     }
 
     void init()

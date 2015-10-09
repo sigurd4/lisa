@@ -17,11 +17,11 @@ class PortInput : public Port
 
     bool getVal()
     {
-      return valueCheck(digitalRead(id));
+      return valueCheck(digitalRead(this->id));
     }
 
     void init()
     {
-      pinMode(id, INPUT);
+      pinMode(this->id, INPUT);
     }
 };

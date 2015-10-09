@@ -17,16 +17,16 @@ class Main
 
     Main()
     {
-      nextPortToBeInitialized = 0;
+      this->nextPortToBeInitialized = 0;
     }
 
     void init()
     {
-      lcd = initLCD();
+      this->lcd = initLCD();
       initPorts();
 
-      enabled = true;
-      timeTotal = 60; //this will change later
+      this->enabled = true;
+      this->timeTotal = 60; //this will change later
       resetTimer();
     }
 
@@ -34,59 +34,59 @@ class Main
     {
       if (everyXTicks(1000)) //1000 milliseconds = 1 second
       {
-        if (enabled)
+        if (this->enabled)
         {
           updateTimer();
         }
       }
-      ++ticksRunning;
+      ++this->ticksRunning;
       delay(1);
     }
 
     void registerPort(Port port)
     {
-      portsToBeInitialized[nextPortToBeInitialized] = port;
-      ++nextPortToBeInitialized;
+      this->portsToBeInitialized[this->nextPortToBeInitialized] = this->port;
+      ++this->nextPortToBeInitialized;
     }
 
     void initPorts()
     {
       int i;
-      for (i = 0; i < nextPortToBeInitialized; ++i)
+      for (i = 0; i < this->nextPortToBeInitialized; ++i)
       {
-        portsToBeInitialized[i].init();
+        this->portsToBeInitialized[i].init();
       }
     }
 
     void updateTimer()
     {
-      if (timer > 0)
+      if (this->timer > 0)
       {
-        --timer;
+        --this->timer;
       }
       else
       {
-        timer = 0;
+        this->timer = 0;
       }
     }
 
     bool everyXTicks(int x)
     {
-      return ticksRunning % x == x % x;
+      return this->ticksRunning % x == x % x;
     }
 
     void resetTimer()
     {
-      timer = timeTotal;
+      this->timer = this->timeTotal;
     }
 
     LCDScreen initLCD()
     {
-      lcd = LCDScreen();
+      this->lcd = LCDScreen();
       int i;
-      for (i = 0; i < lcd.portsLenght; ++i)
+      for (i = 0; i < this->lcd.portsLenght; ++i)
       {
-        registerPort(lcd.ports[i]);
+        this->registerPort(lcd.ports[i]);
       }
       return lcd;
     }

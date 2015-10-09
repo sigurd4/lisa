@@ -14,22 +14,22 @@ class PortOutput : public Port
 
     PortOutput(int id, bool newDefault) : Port(id)
     {
-      defaultValue = newDefault;
+      this->defaultValue = newDefault;
     }
 
     void setDefault()
     {
-      digitalWrite(id, valueCheck(defaultValue));
+      digitalWrite(this->id, valueCheck(this->defaultValue));
     }
 
     void setVal(bool value)
     {
-      digitalWrite(id, valueCheck(value));
+      digitalWrite(this->id, valueCheck(value));
     }
 
     void init()
     {
-      pinMode(id, OUTPUT);
+      pinMode(this->id, OUTPUT);
       setDefault();
     }
 };
