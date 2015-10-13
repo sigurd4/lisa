@@ -1,27 +1,27 @@
 #include "arduino.h"
-
 #include "Port.cpp"
+#include "PortInput.h"
 
-class PortInput : public Port
+#ifndef PORT_INPUT_CPP
+#define PORT_INPUT_CPP
+
+PortInput :: PortInput() : Port()
 {
-  public:
-    PortInput(): Port()
-    {
 
-    }
-
-    PortInput(int id) : Port(id)
-    {
-
-    }
-
-    bool getVal()
-    {
-      return valueCheck(digitalRead(this->id));
-    }
-
-    void init()
-    {
-      pinMode(this->id, INPUT);
-    }
 };
+
+PortInput :: PortInput(int id) : Port(id)
+{
+
+};
+
+bool PortInput :: getVal()
+{
+  return valueCheck(digitalRead(this->id));
+};
+
+void PortInput :: init()
+{
+  pinMode(this->id, INPUT);
+};
+#endif

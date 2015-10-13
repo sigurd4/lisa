@@ -1,26 +1,17 @@
 #include "arduino.h"
-
 #include "PortOutput.cpp"
+#include "LCDScreen.h"
 
-class LCDScreen
+#ifndef LCD_SCREEN_CPP
+#define LCD_SCREEN_CPP
+
+LCDScreen::LCDScreen()
 {
-
-  public:
-    const static int portsLenght = 14;
-    PortOutput ports [portsLenght];
-  private:
-
-
-    bool enabled;
-  public:
-    LCDScreen()
-    {
-      this->enabled = true;
-      int i;
-      for (i = 0; i < portsLenght; ++i)
-      {
-
-        this->ports[i] =   PortOutput(i, false);
-      }
-    }
+  this->enabled = true;
+  int i;
+  for (i = 0; i < portsLenght; ++i)
+  {
+    this->ports[i] = PortOutput(i, false);
+  }
 };
+#endif

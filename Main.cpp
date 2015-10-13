@@ -1,6 +1,8 @@
 #include "arduino.h"
-
 #include "LCDScreen.cpp"
+
+#ifndef MAIN_CPP
+#define MAIN_CPP
 
 class Main
 {
@@ -91,3 +93,4 @@ class Main
       return lcd;
     }
 };
+#endif
